@@ -1,5 +1,5 @@
-public class driverC extends driver{
-    public driverC(String name, boolean driverLicense, int experience) {
+public class DriverC extends Driver {
+    public DriverC(String name, boolean driverLicense, int experience) {
         super(name, driverLicense, experience);
     }
 
@@ -21,10 +21,8 @@ public class driverC extends driver{
     public void driversLicenseType() {
         try {
             isDriverLicense();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        finally {
+        } catch (LicenseTypeException e) {
+            System.out.println("Произошла ошибка");
             System.out.println("Необходимо указать тип прав!");
         }
     }

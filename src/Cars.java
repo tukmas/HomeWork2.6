@@ -1,11 +1,11 @@
-public class cars extends Transport <driverB>{
+public class Cars extends Transport <DriverB>{
     private String transmission;
     private String bodyType;
     private String registrationNumber;
 
     private int numberOfSeats;
 
-    public enum bodyType1 {
+    public enum BodyType1 {
         SEDAN ("Седан"),
         HATCHBACK ("Хетчбек"),
         COUPE ("Купе"),
@@ -16,7 +16,7 @@ public class cars extends Transport <driverB>{
         VAN ("Фургон"),
         MINIVAN ("Минивэн");
         public final String Type;
-        bodyType1(String Type){
+        BodyType1(String Type){
             this.Type = Type;
         }
         public String getType() {
@@ -51,7 +51,7 @@ public class cars extends Transport <driverB>{
         this.registrationNumber = registrationNumber;
     }
 
-    public cars(String brand, String model, float engineVolume,driverB driver, String transmission, String bodyType, String registrationNumber,int numberOfSeats) {
+    public Cars(String brand, String model, float engineVolume, DriverB driver, String transmission, String bodyType, String registrationNumber, int numberOfSeats) {
         super(brand, model, engineVolume,driver);
         if (transmission != null){
             this.transmission = transmission;
@@ -85,17 +85,17 @@ public class cars extends Transport <driverB>{
     }
 
     @Override
-    public void PitStop(String PitStop) {
+    public void pitStop(String PitStop) {
         System.out.println("Пит-стоп у легкового автомобиля");
     }
 
     @Override
-    public void BestLapTime(String BestLapTime) {
+    public void timeLap(String BestLapTime) {
         System.out.println("Лучшее время круга у легкового автомобиля");
     }
 
     @Override
-    public void MaxSpeed(String MaxSpeed) {
+    public void maxSpeed(String MaxSpeed) {
         System.out.println("Максимальная скорость у легкового автомобиля");
 
     }
@@ -106,7 +106,6 @@ public class cars extends Transport <driverB>{
     }
 
     @Override
-    public void PassDiagnostics() {
-        System.out.println("Легковой атомобиль проходит диагностику");
+    public void passDiagnostics() {System.out.println("Легковой атомобиль проходит диагностику");
     }
 }

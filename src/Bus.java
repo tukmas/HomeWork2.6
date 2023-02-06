@@ -1,10 +1,10 @@
-public class Bus  extends Transport <driverD>{
+public class Bus  extends Transport <DriverD>{
     private int weight;
     private  int numberOfWheels;
     private String equipment;
     private String color;
 
-    public enum capacity {
+    public enum Capacity {
         ESPECIALLY_SMALL ("до 10 мест"),
         SMALL ("до 25 мест"),
         AVERAGE ("40–50 мест"),
@@ -12,7 +12,7 @@ public class Bus  extends Transport <driverD>{
         EXTRA_LARGE ("100–120 мест");
         public final String capacity1;
 
-        capacity (String capacity1){
+        Capacity (String capacity1){
             this.capacity1 = capacity1;
         }
         public String getcapacity1() {
@@ -55,7 +55,7 @@ public class Bus  extends Transport <driverD>{
         this.color = color;
     }
 
-    public Bus(String brand, String model, float engineVolume, driverD driver, int weight, int numberOfWheels, String equipment, String color) {
+    public Bus(String brand, String model, float engineVolume, DriverD driver, int weight, int numberOfWheels, String equipment, String color) {
         super(brand, model, engineVolume, driver);
         if (weight >= 3000) {
             this.weight = weight;
@@ -89,17 +89,17 @@ public class Bus  extends Transport <driverD>{
     }
 
     @Override
-    public void PitStop(String PitStop) {
+    public void pitStop(String PitStop) {
         System.out.println("Пит-стоп у автобуса");
     }
 
     @Override
-    public void BestLapTime(String BestLapTime) {
+    public void timeLap(String BestLapTime) {
         System.out.println("Лучшее время круга у автобуса");
     }
 
     @Override
-    public void MaxSpeed(String MaxSpeed) {
+    public void maxSpeed(String MaxSpeed) {
         System.out.println("Максимальная скорость у автобуса");
     }
     @Override
@@ -108,7 +108,7 @@ public class Bus  extends Transport <driverD>{
     }
 
     @Override
-    public void PassDiagnostics() throws RuntimeException {
-        throw new RuntimeException("Автобусы диагностику проходить не могу" + getBrand());
+    public void passDiagnostics() throws TransportTypeException {
+        throw new TransportTypeException("Автобусы диагностику проходить не могу" + getBrand());
     }
 }

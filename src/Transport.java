@@ -1,4 +1,4 @@
-public abstract class Transport <T extends driver> implements Competing{
+public abstract class Transport <T extends Driver> implements Competing{
     private String brand;
     private String model;
 
@@ -53,7 +53,7 @@ public abstract class Transport <T extends driver> implements Competing{
 
     public abstract void printType();
 
-    public abstract void PassDiagnostics() throws RuntimeException;
+    public abstract void passDiagnostics() throws TransportTypeException;
 
     @Override
     public String toString() {

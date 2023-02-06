@@ -1,9 +1,9 @@
-public abstract class driver {
+public abstract class Driver {
     private String name;
     private boolean driverLicense;
     private int experience;
 
-    public driver(String name, boolean driverLicense, int experience) {
+    public Driver(String name, boolean driverLicense, int experience) {
         this.name = name;
         this.driverLicense = driverLicense;
         this.experience = experience;
@@ -13,7 +13,7 @@ public abstract class driver {
         return name;
     }
 
-    public boolean isDriverLicense() {
+    public boolean isDriverLicense() throws LicenseTypeException{
         return driverLicense;
     }
 
@@ -25,5 +25,5 @@ public abstract class driver {
     public abstract void stop();
     public abstract void refuelTheСar();
 
-    public abstract void driversLicenseType();
+    public abstract void driversLicenseType() throws LicenseTypeException;
 }

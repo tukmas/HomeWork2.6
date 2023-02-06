@@ -1,15 +1,15 @@
-public class trucks extends Transport <driverC>{
+public class Trucks extends Transport <DriverC>{
     private int loadClass;
     private int height;
     private String fuelType;
     private int numberOfAxles;
 
-    public enum loadCapacity {
+    public enum LoadCapacity {
         N1 ("с полной массой до 3,5 тонн"),
         N2 ("с полной массой свыше 3,5 до 12 тонн"),
         N3 ("(с полной массой свыше 12 тонн");
         private final String Capacity;
-        loadCapacity (String Type){
+        LoadCapacity (String Type){
             this.Capacity = Type;
         }
         public String getCapacity() {
@@ -37,7 +37,7 @@ public class trucks extends Transport <driverC>{
         return numberOfAxles;
     }
 
-    public trucks(String brand, String model, float engineVolume, driverC driver, int loadClass, int height, String fuelType, int numberOfAxles) {
+    public Trucks(String brand, String model, float engineVolume, DriverC driver, int loadClass, int height, String fuelType, int numberOfAxles) {
         super(brand, model, engineVolume, driver);
         if (loadClass != 0){
             this.loadClass = loadClass;
@@ -69,17 +69,17 @@ public class trucks extends Transport <driverC>{
     }
 
     @Override
-    public void PitStop(String PitStop) {
+    public void pitStop(String PitStop) {
         System.out.println("Пит-стоп у грузового автомобиля");
     }
 
     @Override
-    public void BestLapTime(String BestLapTime) {
+    public void timeLap(String BestLapTime) {
         System.out.println("Лучшее время круга у грузового автомобиля");
     }
 
     @Override
-    public void MaxSpeed(String MaxSpeed) {
+    public void maxSpeed(String MaxSpeed) {
         System.out.println("Максимальная скорость у грузового автомобиля");
     }
     @Override
@@ -88,7 +88,7 @@ public class trucks extends Transport <driverC>{
     }
 
     @Override
-    public void PassDiagnostics() {
+    public void passDiagnostics() {
         System.out.println("Грузовой автомобиль проходит диагностику");
     }
 }
